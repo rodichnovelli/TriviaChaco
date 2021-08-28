@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Borrar resultado {% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h4>¿Estás seguro que deseas borrar el resultado de {{marks.user}}, quien obtuvo {{marks.score}} en {{marks.quiz}}?</h4>
+    <br>
+    <form action="/delete_result/{{marks.id}}/" method="POST">
+            
+        {% csrf_token %}
+        <a class="btn btn-warning" href="/results/">Cancelar</a>
+    
+        <input class="btn btn-danger" type="submit" value="Borrar">
+    </form>
+</div>
+
+{% endblock %}
