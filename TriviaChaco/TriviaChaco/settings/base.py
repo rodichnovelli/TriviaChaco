@@ -29,7 +29,7 @@ DJANGO_APPS = [
 ]
 
 LOCAL_APPS = [
-    
+    'home.apps.HomeConfig',
 ]
 
 THIRD_APPS = [
