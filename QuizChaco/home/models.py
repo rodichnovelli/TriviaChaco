@@ -16,6 +16,7 @@ class Quiz(models.Model):
     
     class Meta:
     		db_table = 'Quiz'
+        
     
 class Question(models.Model):
     content = models.CharField(max_length=200)
@@ -28,7 +29,7 @@ class Question(models.Model):
         return self.answer_set.all()
     
     class Meta:
-        		db_table = 'Question'
+    		db_table = 'Question'
     
     
 class Answer(models.Model):
@@ -40,7 +41,7 @@ class Answer(models.Model):
         return f"question: {self.question.content}, answer: {self.content}, correct: {self.correct}"
     
     class Meta:
-        		db_table = 'Answer'
+    		db_table = 'Answer'
     
 class Marks_Of_User(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
@@ -51,6 +52,6 @@ class Marks_Of_User(models.Model):
         return str(self.quiz)
     
     class Meta:
-        		db_table = 'Mark_Of_User'
+    		db_table = 'Marks_Of_Users'
 
 

@@ -21,23 +21,15 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-DJANGO_APPS = [
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
+    'django.contrib.staticfiles',
+    'home.apps.HomeConfig',
 ]
-
-LOCAL_APPS = [
-    'home.apps.HomeConfig'
-]
-
-THIRD_APPS = [
-]
-
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -73,7 +65,16 @@ WSGI_APPLICATION = 'QuizApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'QuizApp',
+        "USER": "postgres",
+        "PASSWORD": 153624,
+        "HOST":"127.0.0.1",
+        "DATABASE_PORT":"5432"
+    }
+}
 
 
 # Password validation
