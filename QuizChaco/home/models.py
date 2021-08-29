@@ -14,6 +14,9 @@ class Quiz(models.Model):
     def get_questions(self):
         return self.question_set.all()
     
+    class Meta:
+    		db_table = 'Quiz'
+    
 class Question(models.Model):
     content = models.CharField(max_length=200)
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
@@ -24,6 +27,9 @@ class Question(models.Model):
     def get_answers(self):
         return self.answer_set.all()
     
+    class Meta:
+        		db_table = 'Question'
+    
     
 class Answer(models.Model):
     content = models.CharField(max_length=200)
@@ -33,6 +39,9 @@ class Answer(models.Model):
     def __str__(self):
         return f"question: {self.question.content}, answer: {self.content}, correct: {self.correct}"
     
+    class Meta:
+        		db_table = 'Answer'
+    
 class Marks_Of_User(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -40,5 +49,8 @@ class Marks_Of_User(models.Model):
     
     def __str__(self):
         return str(self.quiz)
+    
+    class Meta:
+        		db_table = 'Mark_Of_User'
 
 
