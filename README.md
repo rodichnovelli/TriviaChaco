@@ -47,7 +47,5 @@ DATABASES = {
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
 * **Rodich Novelli Christian Esteban** - *Developer* 
-* **Romero Martín Emanuel** - *Developer*
-* **Kiverling Ricardo Daniel** - *Developer*
 
 
