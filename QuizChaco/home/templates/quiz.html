@@ -200,7 +200,7 @@ const sendData = () => {
         success: function(response){
             const marks = response.marks
             quizForm.classList.add('not-visible')
-            totalScore.innerHTML = `<h4>Final Score : ${response.score} Out Of {{quiz.number_of_questions}} marks</h4>`
+            totalScore.innerHTML = `<h4>Puntuación Final: ${response.score} de {{quiz.number_of_questions}} puntos</h4>`
 
 
             marks.forEach(res=>{
@@ -212,7 +212,7 @@ const sendData = () => {
                     resDiv.classList.add(...cls)
 
                     if (resp=='not answered') {
-                        resDiv.innerHTML += '- not answered'
+                        resDiv.innerHTML += '<br> No respondida'
                         resDiv.classList.add('bg-info')
                     }
                     else {
@@ -221,11 +221,11 @@ const sendData = () => {
 
                         if (answer == correct) {
                             resDiv.classList.add('bg-success')
-                            resDiv.innerHTML += ` answered: ${answer}`
+                            resDiv.innerHTML += ` <br>--> Tu respuesta: ${answer}`
                         } else {
                             resDiv.classList.add('bg-danger')
-                            resDiv.innerHTML += ` | correct answer: ${correct}`
-                            resDiv.innerHTML += ` | answered: ${answer}`
+                            resDiv.innerHTML += ` <br>--> Tu respuesta:  ${answer}`
+                            resDiv.innerHTML += ` <br>--> Respuesta correcta: ${correct}`
                         }
                     }
                 }

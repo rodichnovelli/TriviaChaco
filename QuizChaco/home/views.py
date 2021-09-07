@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import QuizForm, QuestionForm
 from django.forms import inlineformset_factory
+from django.contrib import messages
+
 
 def index(request):
     quiz = Quiz.objects.all()
@@ -108,7 +110,8 @@ def Login(request):
             login(request, user)
             return redirect("/")
         else:
-            return render(request, "login.html") 
+            return render(request, "login.html")
+             
     return render(request, "login.html")
 
 def Logout(request):
